@@ -8,3 +8,9 @@
 .container-nav span {
     margin-right: 10px;
 }
+
+.active {
+    color: rgb(139, 195, 139) ;
+    font-weight: 700;
+    font-size: 18px;
+}

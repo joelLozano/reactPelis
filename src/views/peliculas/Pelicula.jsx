@@ -10,7 +10,7 @@ export default function Pelicula() {
 
   useEffect(() => {
     if (loading) {
-      
+      console.log("fetching data");
         fetch("http://localhost:5000/getPeliculas")
         .then((response) => response.json())
         .then((data) => {
@@ -21,7 +21,9 @@ export default function Pelicula() {
   }, []);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <div>
+      <h2>loader</h2>
+    </div>
   } else {
     return (
       <div className="container-movies">

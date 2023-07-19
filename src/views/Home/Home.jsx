@@ -8,9 +8,6 @@ export default function Home() {
     <>
     <div><Navbar/></div>
     <div>
-    <Button variant="primary">Primary</Button>{' ss'}
-    </div>
-    <div>
         <Outlet/>
     </div>
     

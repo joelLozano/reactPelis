@@ -1,0 +1,30 @@
+.aside {
+    padding-top: 60px;
+  width: 20%;
+  background-color: rgb(36, 35, 35);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fix;
+  bottom: 0;
+}
+
+.aside a {
+    height: 50px;
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.aside a:hover {
+  background-color: rgb(36, 42, 48);
+  color: orangered;
+}
+
+.aside .linkActive {
+    background-color: rgb(36, 42, 48);
+    color: orangered;
+    font-weight: 700;
+}

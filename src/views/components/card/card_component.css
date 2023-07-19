@@ -1,9 +1,16 @@
 .card-style {
-    margin: 20px;
-    width: 250px;
-    height: 300px;
-    border-radius: 16px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 220px;
+    height: 380px;
+    color: white;
+    transition: transform 0.3s;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .card-style:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    
   }
 
   .ma-10{
@@ -12,7 +19,7 @@
 
   .portada {
     width: 100%;
-    border-radius: 16px;
+    height: 280px;
   }
   
   .styleGreen {
@@ -26,3 +33,26 @@
   .icon-red{
      color: red;
   }
+
+  .movie-description {
+    display: flex;
+  }
+
+  .movie-description-info {
+    width: 90%;
+  }
+  .like-button {
+    width: 10%;
+    text-align: right;
+  }
+
+  .movie-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .movie-subtitle {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}

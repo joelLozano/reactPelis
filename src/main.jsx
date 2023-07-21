@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, Router, RouterProvider,} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Pelicula from './views/peliculas/pelicula.jsx'
 import Navbar from './views/menu/navbar.jsx'
 import Footer from './views/footer/Footer.jsx'
 import './index.css'
 import Home from './views/Home/Home.jsx';
-import Peliculas from './views/peliculas/pelicula.jsx';
+import Peliculas from './views/peliculas/Pelicula.jsx';
 
 
 const router = createBrowserRouter([

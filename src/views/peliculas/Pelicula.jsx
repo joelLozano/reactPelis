@@ -26,23 +26,20 @@ export default function Pelicula(props) {
   }, []);
 
 
-  const searchBar = (value) => {
-    setSearch(value);
+  const searchBar = (e) => {
+    let value = e.target.value;
+    setSearch(e.target.value);
 
     console.log(search);
     if (!value) {
       // Si el valor de búsqueda está vacío, restaurar todas las películas originales
-      console.log("vacio");
       setPelisFilter(pelisState.peliculas)
-      console.log(pelisState.peliculas);
     } else {
       // Filtrar las películas según el valor de búsqueda
-      console.log("no vacio");
       const filteredPeliculas = pelisState.peliculas.filter((movie) =>
         movie.titulo.toLowerCase().includes(value.toLowerCase())
       );
       setPelisFilter(filteredPeliculas);
-      //pelisFilter = { peliculas: filteredPeliculas };
     }
 }
   
@@ -64,7 +61,7 @@ export default function Pelicula(props) {
 
             <div className="row">
               <div className="col text-center">
-                <input type="text" value={search} onChange={(e) => searchBar(e.target.value)} placeholder="titulo de pelicula"/>
+                <input type="text"  onChange={searchBar} placeholder="titulo de pelicula"/>
               </div>
             </div>
           </div>

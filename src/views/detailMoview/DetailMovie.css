@@ -1,0 +1,10 @@
+.detail-container {
+    width: 100%;
+    padding-top: 80px;
+    position: absolute;
+    left: 20%;
+}
+
+.detail-portada {
+    width: 50%;
+}

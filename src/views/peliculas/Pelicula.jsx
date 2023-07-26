@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Card from "../components/card/card_component";
 import "./style/pelicula.css";
 import { Col, Row } from "react-bootstrap";
@@ -77,7 +78,9 @@ export default function Pelicula(props) {
           <Row className="row row-items">
             {pelisFilter.map((movie, index) => (
               <Col xs={12} sm={6} md={4} lg={3} key={index} className="items">
-                <Card movie={movie} key={index} />
+                <Link  to={`/${movie.titulo}`} state={movie} >
+                  <Card movie={movie} key={index}/>
+                </Link>
                 </Col>
             ))}
           </Row>

@@ -8,6 +8,7 @@ import Footer from './views/footer/Footer.jsx'
 import './index.css'
 import Home from './views/Home/Home.jsx';
 import Peliculas from './views/peliculas/Pelicula.jsx';
+import DatailMovie from './views/detailMoview/DatailMovie.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,8 +30,19 @@ const router = createBrowserRouter([
         element: <Peliculas type="comedia" key="comedia"/>,
       },
       {
-        path: "/independientes",
+        path: "/independientes/",
         element: <Peliculas type="independientes" key="independientes"/>,
+        // children: [
+        //   {
+        //     path: ":id",
+        //     element: <h1>Movie</h1>,
+        //   }
+        // ]
+      },
+      {
+        path: "/:moview",
+        element: <DatailMovie/>
+        
       }
     ]
   }
@@ -38,7 +50,5 @@ const router = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
    <RouterProvider router={router}/>
-  </React.StrictMode>
 )

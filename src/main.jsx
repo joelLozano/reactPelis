@@ -27,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/comedia",
         element: <Peliculas type="comedia" key="comedia"/>,
+      },
+      {
+        path: "/independientes",
+        element: <Peliculas type="independientes" key="independientes"/>,
       }
     ]
   }

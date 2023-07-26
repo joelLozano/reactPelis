@@ -30,6 +30,14 @@ export default function Aside() {
           {" "}
           COMEDIA{" "}
         </NavLink>
+
+        <NavLink
+          to={"independientes/"}
+          className={({ isActive }) => (isActive ? "linkActive" : "")}
+        >
+          {" "}
+          Independientes{" "}
+        </NavLink>
    
     </aside>
   );

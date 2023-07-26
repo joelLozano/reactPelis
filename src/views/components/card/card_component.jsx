@@ -17,7 +17,7 @@ function Card({ movie }) {
         <div className="movie-description-info">
           <h1 className="movie-title">{movie.titulo}</h1>
           <p className="movie-subtitle">{movie.director}</p>
-          <p>{movie.anio}</p>
+          <p>{movie.duracion}</p>
         </div>
 
         <div className="like-button">

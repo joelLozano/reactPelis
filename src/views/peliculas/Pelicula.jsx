@@ -6,6 +6,7 @@ import { Col, Row } from "react-bootstrap";
 
 export default function Pelicula(props) {
   const [pelisState, setPelisState] = useState([]);
+  const [pelisFilter, setPelisFilter] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   // Estado de barra de busqueda
@@ -18,30 +19,29 @@ export default function Pelicula(props) {
         .then((response) => response.json())
         .then((data) => {
           setPelisState(data);
+          setPelisFilter(data.peliculas);
           setLoading(false);
         });
     }
   }, []);
 
-  let pelisFilter = [{
-    peliculas: []
-  }]
 
-  const searchBar = (e) => {
-    const searchValue = e.target.value;
-    setSearch(searchValue);
+  const searchBar = (value) => {
+    setSearch(value);
 
     console.log(search);
-    if (!searchValue) {
+    if (!value) {
       // Si el valor de búsqueda está vacío, restaurar todas las películas originales
-      pelisFilter = pelisState;
-      //setPelisState({ peliculas: pelisState.peliculas });
+      console.log("vacio");
+      setPelisFilter(pelisState.peliculas)
+      console.log(pelisState.peliculas);
     } else {
       // Filtrar las películas según el valor de búsqueda
+      console.log("no vacio");
       const filteredPeliculas = pelisState.peliculas.filter((movie) =>
-        movie.titulo.toLowerCase().includes(searchValue.toLowerCase())
+        movie.titulo.toLowerCase().includes(value.toLowerCase())
       );
-      setPelisState({ peliculas: filteredPeliculas });
+      setPelisFilter(filteredPeliculas);
       //pelisFilter = { peliculas: filteredPeliculas };
     }
 }
@@ -64,7 +64,7 @@ export default function Pelicula(props) {
 
             <div className="row">
               <div className="col text-center">
-                <input type="text" value={search} onChange={searchBar} placeholder="titulo de pelicula"/>
+                <input type="text" value={search} onChange={(e) => searchBar(e.target.value)} placeholder="titulo de pelicula"/>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function Pelicula(props) {
           </div>
 
           <Row className="row row-items">
-            {pelisState.peliculas.map((movie, index) => (
+            {pelisFilter.map((movie, index) => (
               <Col xs={12} sm={6} md={4} lg={3} key={index} className="items">
                 <Card movie={movie} key={index} />
                 </Col>

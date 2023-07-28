@@ -15,8 +15,7 @@ export default function Pelicula(props) {
   
   useEffect(() => {
     if (loading) {
-      console.log(`http://localhost:5000/${props.type}`);
-      fetch(`http://localhost:5000/${props.type}`)
+      fetch(`https://api-pelis-back.onrender.com/${props.type}`)
         .then((response) => response.json())
         .then((data) => {
           setPelisState(data);
